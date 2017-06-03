@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"log"
 	"net/http"
 	"os/exec"
@@ -28,5 +29,6 @@ func main() {
 		}
 	}
 	http.HandleFunc("/", f)
-	http.ListenAndServe(":9999", nil)
+	fmt.Println("http://localhost:9999")
+	panic(http.ListenAndServe(":9999", nil))
 }
